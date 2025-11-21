@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CiberHigiene</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9fafb;
+            color: #333;
+        }
+        header {
+            background: #e0f2fe;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 2px solid #bae6fd;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #0369a1;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        nav a {
+            color: #0369a1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: #f0f9ff;
+        }
+        .hero h2 {
+            font-size: 28px;
+            color: #0284c7;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 10px auto;
+        }
+        .container {
+            width: 90%;
+            max-width: 450px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        h2 {
+            text-align: center;
+            color: #0369a1;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0284c7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0369a1;
+        }
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .card h3 {
+            color: #0369a1;
+        }
+        .info-seguridad {
+            display: none;
+            padding: 20px;
+            background: #e0f2fe;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CiberHigiene</h1>
+    <nav>
+        <a href="#cursos">Cursos</a>
+        <a href="#loginBox">Iniciar Sesión</a>
+        <a href="#infoSeguridad">Seguridad</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Bienvenido a CiberHigiene</h2>
+    <p>Aprende a proteger tu identidad digital, reconocer intentos de fraude y navegar de forma segura en el entorno universitario y profesional. Nuestra plataforma te acompaña paso a paso.</p>
+</section>
+
+<section id="cursos" class="courses">
+    <div class="card">
+        <h3>🛡 Identificación de Phishing</h3>
+        <p>Aprende a detectar correos falsos, enlaces maliciosos y técnicas de engaño.</p>
+    </div>
+    <div class="card">
+        <h3>🔐 Contraseñas Seguras</h3>
+        <p>Crea contraseñas fuertes y gestiona tus credenciales de manera adecuada.</p>
+    </div>
+    <div class="card">
+        <h3>📱 Buenas Prácticas Digitales</h3>
+        <p>Recomendaciones para mantener tus dispositivos seguros y protegidos.</p>
+    </div>
+</section>
+
+<div class="container" id="loginBox">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="usuario" placeholder="Usuario">
+    <input type="password" id="clave" placeholder="Contraseña">
+    <button onclick="iniciarSesion()">Ingresar</button>
+
+    <div class="info" style="text-align:center; margin-top:15px;">
+        <a href="#" onclick="mostrarInfo()" style="color:#0369a1; text-decoration:none; font-weight:bold;">¿Cómo protegerme del fraude digital?</a>
+    </div>
+</div>
+
+<div class="container info-seguridad" id="infoSeguridad">
+    <h2>Recomendaciones de Seguridad</h2>
+    <p>📌 Usa contraseñas robustas: mezcla letras, números y símbolos.</p>
+    <p>📌 No abras enlaces sospechosos ni compartas tus claves.</p>
+    <p>📌 Verifica siempre la dirección del remitente.</p>
+    <p>📌 Activa la verificación en dos pasos.</p>
+    <button onclick="ocultarInfo()">Cerrar</button>
+</div>
+
+<footer>
+    © 2025 CiberHigiene — Protegiendo tu identidad digital
+</footer>
+
+<script>
+    function iniciarSesion() {
+        let user = document.getElementById("usuario").value;
+        let pass = document.getElementById("clave").value;
+
+        if(user === "" || pass === ""){
+            alert("Por favor completa todos los campos.");
+            return;
+        }
+        alert("Inicio de sesión simulado. ¡Protege siempre tus credenciales!");
+    }
+
+    function mostrarInfo(){
+        document.getElementById("infoSeguridad").style.display = "block";
+    }
+
+    function ocultarInfo(){
+        document.getElementById("infoSeguridad").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
